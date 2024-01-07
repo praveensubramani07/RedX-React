@@ -1,0 +1,61 @@
+.com-dp{
+    width: 30px;
+    clip-path: circle(50% at 50% 50%)
+}
+.posted-by{
+    margin-left: 30px;
+}
+
+.community{
+    font-size: 20px;
+    margin-left: 10px;
+}
+.cont-parent{
+    display: flex;
+    margin: 0px 500px;
+    flex-direction: column;
+    padding-left: 20px;
+     border-top: 1px solid black;
+}
+.post-tittle{
+    color: black;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.post-description{
+    color: black;
+    font-size: 20px;
+}
+.com-det{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.vote-cont{
+    display: flex;
+    margin: 20px;
+    gap:20px;
+    
+}
+.post-image{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+.up-off{
+    width: 20px;
+    height: 20px;
+}
+.down-off{
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 1200px) {
+    .cont-parent {
+      margin: 0px;
+      
+    }
+  }

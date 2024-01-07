@@ -1,0 +1,171 @@
+.createcom-main {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.form-cont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding and border in the total width and height */
+}
+
+.note-cc {
+    color: gray;
+    font-size: 14px;
+}
+
+.form-cont input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.label-cc {
+    margin-top: 20px;
+}
+
+.form-cont button {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: lightgray;
+    padding: 12px;
+    cursor: pointer;
+}
+.community-header{
+    width: 100%;
+    margin-top: 60px;
+}
+.header-flex{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.header-flex img{
+    border-radius: 30px;
+    width: 50px;
+    height: auto;
+    
+}
+.com-title{
+    font-size: 30px;
+    font-weight: 500;
+}
+.join{
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 5px 20px;
+    margin-left: 10%;
+}
+.create{
+    padding: 5px 20px;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-left: 5%;
+}
+.header-1{
+    display: flex;
+    width: 50%;
+}
+.header-2{
+    display: flex;
+    width: 50%;
+}
+.title-count{
+    margin-left: 20px;
+}
+.count{
+    font-size: 15px;
+    color: gray;
+
+}
+.com-not-found{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+.com-not-found p{
+    margin-top: 20px;
+}
+.posts-title{
+    font-size: 30px;
+    width: 100%;
+    margin-left: 45%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.loading-comm{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.lo-c{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: lightgray;
+}
+.lo-b{
+    margin-left: 20px;
+    width: 140px;
+    height: 50px;
+    background-color: lightgray;
+    margin-right: 50px;
+}
+.lo-btn{
+    width: 70px;
+    height: 25px;
+    background-color: lightgray;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+    .createcom-main {
+        width: 90%;
+    }
+
+    .form-cont {
+        margin-top: 40px;
+    }
+
+    .form-cont button {
+        margin-top: 15px;
+    }
+    .form-cont input{
+        width: 90%;
+    }
+    .community-header{
+        width: 100%;
+    }
+    .header-flex{
+        width: 80%;
+        flex-direction: column;
+        margin: auto;
+    }
+    .header-1{
+        width: 100%;
+    }
+    .header-2{
+        margin-top: 30px;
+        width: 100%;
+    }
+    .posts-title{
+        width: 80%;
+        margin-left: 30px;
+    }
+}

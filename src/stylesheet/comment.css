@@ -1,0 +1,41 @@
+.comment-parent{
+    display: flex;
+    margin: 0px 500px;
+    justify-content: center;
+    padding-left: 20px;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    
+}
+
+.cmt-name{
+    font-size: 15px;
+    color: orangered;
+}
+.cmt-input{
+    width: 80%;
+    padding: 20px;
+    font-size: 15px;
+}
+.cmt-button{
+    padding: 20px;
+    font-size: 15px;
+    background-color: orangered;
+    color: black;
+}
+@media (max-width: 1200px) {
+    .comment-parent {
+      margin: 0px;
+      
+    }
+
+.cmt-name{
+    font-size: 10px;
+}
+.cmt-input{
+    width: 60%;
+    padding: 20px;
+    font-size: 15px;
+}
+  }

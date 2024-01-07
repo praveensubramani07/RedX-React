@@ -1,0 +1,17 @@
+.feed-cont{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    gap: 10px;
+}
+img{
+    width: 100%;
+}
+.cont-clr{
+    background-color: white;
+    margin: 0px 500px;
+}
+.fas{
+    color: black;
+    
+}
