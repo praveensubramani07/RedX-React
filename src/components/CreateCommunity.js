@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../stylesheet/community.css';
 import { Cookies } from 'react-cookie';
 import url from './config';
+import NavBar from './Navbar';
 
 
 export default function CreateCommunity() {
@@ -58,6 +59,7 @@ export default function CreateCommunity() {
 
   return (
     <>
+    <NavBar/>
     <div className='createcom-main'>
     <form onSubmit={handleSubmit}>
       <div className='form-cont'>
