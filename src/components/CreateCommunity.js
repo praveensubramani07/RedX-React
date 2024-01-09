@@ -41,7 +41,7 @@ export default function CreateCommunity() {
         console.log(',jfdht',response)
       if (response.ok) {
         console.log('insed if')
-        const data = await response;
+        const data = await response.json();
         console.log(data); // Handle the response from the server
 
         // Redirect to the new community page
