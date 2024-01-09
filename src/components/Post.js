@@ -7,16 +7,21 @@ import '../stylesheet/post.css';
 import { Cookies } from 'react-cookie';
 import onUpvoteOffImage from '../images/upvote-on.png';
 import onDownVoteOfImage from '../images/downvote-on.png';
+import { useNavigate } from 'react-router-dom';
+import  url from './config';
+
 
 export default function Post({ post }) {
   const [postDetails, setPostDetails] = useState([]);
   const post_id = post;
   const cookie = new Cookies();
   const user_id = cookie.get('userEmail');
+    const navigate = useNavigate();
+
 
   const postVote = async (voteAction) => {
     try {
-      const response = await fetch('http://localhost:4000/api/vote', {
+      const response = await fetch(`${url}vote`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,6 +40,32 @@ export default function Post({ post }) {
       console.error('Error:', error);
     }
   };
+  // ...
+
+  const handlePostClick = async () => {
+    try {
+      // Increment clicks
+      const clickResponse = await fetch(`${url}incrementClicks`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ post_id }),
+      });
+
+      if (clickResponse.ok) {
+        const clickData = await clickResponse.json();
+        console.log('Clicks incremented successfully:', clickData);
+
+        // Navigate to the post detail page
+        navigate(`/post/${post_id}`);
+      } else {
+        console.error('Increment clicks failed:', clickResponse.statusText);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   const handleUpvoteClick = () => {
     postVote('up');
@@ -46,7 +77,7 @@ export default function Post({ post }) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/getPostDetailsWithUserAndCommunity?post_id=${post_id}&user_id=${user_id}`);
+      const response = await fetch(`${url}getPostDetailsWithUserAndCommunity?post_id=${post_id}&user_id=${user_id}`);
       const data = await response.json();
       setPostDetails(data);
       console.log('Post data:', data);
@@ -62,9 +93,9 @@ export default function Post({ post }) {
   return (
     <>
       {postDetails.map((item) => (
-        <div key={item.description} className='cont-parent'>
-          <Link to={`/post/${post_id}`} style={{ textDecoration: 'none', display: 'contents' }}>
-            <div className='com-det'>
+        <div key={item.description} className='cont-parent'onClick={handlePostClick}>
+
+            <div  className='cont-det' >
               <img className='com-dp' src={item.community_dp} alt='Community DP' />
               <span className='community' style={{ textDecoration: 'none' }}>
                 {item.community_name}
@@ -75,7 +106,7 @@ export default function Post({ post }) {
               <img className='post-image' src={item.image} alt="Post Image" />
             )}
             <p className='post-description'>{item.description}</p>
-          </Link>
+
           <div className='vote-cont'>
             <img
               className='up-off'
