@@ -68,7 +68,7 @@ function Login() {
     <>
       {!userEmail && (
         <div className="google">
-          <p className="login-p">Login with google/p>
+          <p className="login-p">Login with google</p>
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               try {
