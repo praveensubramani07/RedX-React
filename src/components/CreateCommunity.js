@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheet/community.css';
 import { Cookies } from 'react-cookie';
-
+import url from './config';
 
 
 export default function CreateCommunity() {
@@ -33,7 +33,7 @@ export default function CreateCommunity() {
     formData.append('dp', dpFile);
 
     try {
-      const response = await fetch('http://localhost/redx/community.php', {
+      const response = await fetch('https://redxproject.000webhostapp.com/api/community.php', {
         method: 'POST',
         body: formData,
       });
