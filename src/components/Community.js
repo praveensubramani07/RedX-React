@@ -137,10 +137,16 @@ fetchDataOfCommunity();
   }
   // Add this check for empty community data
   if (!communityData || communityData.length === 0) {
-    return <div className='com-not-found'>
+    return 
+    <>  
+      <NavBar/>
+
+    <div className='com-not-found'>
       <Link to={'/createCommunity'}>Create Community</Link>
       <p>This community is not found ,it may be deleted</p>
-    </div>;
+    </div>
+  </>
+  ;
   }
 
   return (
