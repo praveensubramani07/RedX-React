@@ -3,6 +3,7 @@ import '../stylesheet/newuser.css';
 import { Cookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
 import NavBar from './Navbar';
+import url from './config';
 
 const FindCom = () => {
   const [communities, setCommunities] = useState([]);
@@ -16,7 +17,7 @@ const FindCom = () => {
   const fetchCommunities = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:4000/api/communities');
+      const response = await fetch(`${url}communities`);
       const data = await response.json();
       setCommunities(data);
       setLoading(false);
@@ -29,7 +30,7 @@ const FindCom = () => {
   const searchCommunities = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:4000/api/searchCom?keyword=${searchKeyword}`);
+      const response = await fetch(`${url}searchCom?keyword=${searchKeyword}`);
       const data = await response.json();
       setCommunities(data);
       setLoading(false);
@@ -43,7 +44,7 @@ const FindCom = () => {
   const handleJoinLeave = async (communityId) => {
     const user_id = userEmail; // Replace with the actual user ID
     try {
-      const response = await fetch('http://localhost:4000/api/comLogs', {
+      const response = await fetch(`${url}comLogs`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
