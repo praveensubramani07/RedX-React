@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Cookies } from 'react-cookie';
 import NavBar from './Navbar';
 import { useNavigate } from 'react-router-dom';
+import url from './config';
 
 export default function Profile() {
   const cookies = new Cookies();
@@ -12,7 +13,7 @@ export default function Profile() {
 
   useEffect(() => {
     // Fetch user data based on email when component mounts
-    fetch(`http://localhost:4000/api/users?email=${userEmail}`)
+    fetch(`${url}users?email=${userEmail}`)
       .then((response) => response.json())
       .then((data) => setUserData(data))
       .catch((error) => console.error('Error fetching user data:', error));
@@ -20,7 +21,7 @@ export default function Profile() {
 
   const handleUpdateUsername = () => {
     // Update the username in the backend
-    fetch('http://localhost:4000/api/users', {
+    fetch(`${url}users`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
