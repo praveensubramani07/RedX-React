@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Cookies } from 'react-cookie';
 import send from '../images/send.png'
 import '../stylesheet/comment.css'
+import url from './config';
+
+
 export default function Comment({id}) {
     const [comment,setComment]=useState("");
     const cookie=new Cookies()
@@ -17,7 +20,7 @@ export default function Comment({id}) {
       
       const postComments=async ()=>{
         try{
-          const response= await fetch(`http://localhost:4000/api/comments`,{
+          const response= await fetch(`${url}comments`,{
             method:'POST',
             headers:{
               'Content-Type':'application/json'
@@ -40,7 +43,7 @@ export default function Comment({id}) {
 ///fetch comments
 const fetchcomments=async()=>{
     try{
-    const response=fetch(`http://localhost:4000/api/getComment`,{
+    const response=fetch(`${url}getComment`,{
         method:'POST',
         headers:{'Content-type':'application/json'},
         body:JSON.stringify({post_id:newid}),
