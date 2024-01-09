@@ -59,7 +59,7 @@ function Login() {
     try {
       const e = new Date((Date.now() + 86400000) *30); // Set expiry to 24 hours from now
   
-      cookies.set('userEmail', userEmail, { path: '/' ,e});
+      cookies.set('userEmail', userEmail, { path: '/' ,expires:e});
       console.log('Setting cookie');
     } catch (error) {
       console.error('Error setting cookie', error);
