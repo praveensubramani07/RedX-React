@@ -9,6 +9,8 @@ import Navbar from './Navbar';
 import { Cookies } from 'react-cookie';
 import NavBar from './Navbar';
 import Comment from './Comment';
+import  url from './config';
+
 export default function Post() {
   const [isposts, setposts] = useState([]);
   const { id } = useParams();
@@ -20,7 +22,7 @@ export default function Post() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/getPostDetailsWithUserAndCommunity?post_id=${newid}&user_id=${user_id}`);
+      const response = await fetch(`${url}getPostDetailsWithUserAndCommunity?post_id=${newid}&user_id=${user_id}`);
       const data = await response.json();
       setposts(data);
       
@@ -33,7 +35,7 @@ export default function Post() {
   const postVote = async (voteAction) => {
     try {
       console.log("postvote", voteAction, newid);
-      const response = await fetch('http://localhost:4000/api/vote', {
+      const response = await fetch(`${url}vote`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
