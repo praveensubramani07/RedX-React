@@ -8,6 +8,7 @@ import '../stylesheet/post.css';
 import onUpvoteOffImage from '../images/upvote-on.png';
 import onDownVoteOfImage from '../images/downvote-on.png';
 import Post from './Post';
+import url from './config';
 
 const Community = () => {
   const { id } = useParams();
@@ -17,7 +18,6 @@ const Community = () => {
   const cookies = new Cookies();
   const userEmail = cookies.get('userEmail');
   const [membersCount,setMembersCount]=useState(null);
-  const url='http://localhost:4000/api/'
   const [allPost,setAllPost]=useState([]);
   const [allId,setAllId]=useState();
   if(userEmail==null || userEmail== undefined){
@@ -44,14 +44,14 @@ const Community = () => {
   };
 
   const fetchUserStatus = () => {
-    fetch(`http://localhost:4000/api/statusLog?user_id=${userEmail}&com_id=${id}`)
+    fetch(`${url}statusLog?user_id=${userEmail}&com_id=${id}`)
       .then(response => response.json())
       .then(data => setUserStatus(data))
       .catch(error => console.error(error));
   };
 
   const fetchMembersCount= () => {
-    fetch(`http://localhost:4000/api/membersCount?com_id=${id}`)
+    fetch(`${url}membersCount?com_id=${id}`)
       .then(response => response.json())
       .then(data => setMembersCount(data))
       .catch(error => console.error(error));
@@ -65,7 +65,7 @@ const Community = () => {
   }, [id, userEmail]);
 
   const handleJoinClick = () => {
-    const apiUrl = 'http://localhost:4000/api/comLogs';
+    const apiUrl = `${url}comLogs`;
 
     fetch(apiUrl, {
       method: 'POST',
@@ -93,7 +93,7 @@ const Community = () => {
 ///fetch all posts of a community
   const fetchDataOfCommunity=async()=>{
     try{
-      const response=await fetch(`${url}/communityPosts?com=${id}`);
+      const response=await fetch(`${url}communityPosts?com=${id}`);
       const data=await response.json();
       console.log("from all comunity post",data);
       setAllPost(data);
