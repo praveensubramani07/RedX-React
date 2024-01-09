@@ -46,7 +46,7 @@ export default function CreateCommunity() {
         console.log(data); // Handle the response from the server
 
         // Redirect to the new community page
-        navigate(`/community/${data.insertId}`);
+        navigate(`/`);
       } else {
         console.error('Failed to create community');
       }
