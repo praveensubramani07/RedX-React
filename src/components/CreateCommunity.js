@@ -60,6 +60,7 @@ export default function CreateCommunity() {
   return (
     <>
     <NavBar/>
+    
     <div className='createcom-main'>
     <form onSubmit={handleSubmit}>
       <div className='form-cont'>
