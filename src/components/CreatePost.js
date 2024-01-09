@@ -39,7 +39,7 @@ export default function CreatePost() {
     formData.append('image', imageFile);
   
     try {
-      const response = await fetch('http://localhost/redx/post.php', {
+      const response = await fetch('https://redxproject.000webhostapp.com/api/post.php', {
         method: 'POST',
         body: formData,
       });
