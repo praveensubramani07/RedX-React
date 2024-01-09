@@ -4,6 +4,8 @@ import {jwtDecode} from 'jwt-decode';  // Correct import statement
 import { Cookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheet/login.css';
+import url from './config';
+
 
 function Login() {
   const [userEmail, setUserEmail] = useState(null);
@@ -25,7 +27,7 @@ function Login() {
     if (userEmail) {
       const fetchData = async () => {
         try {
-          const apiResponse = await fetch('http://localhost:4000/api/login', {
+          const apiResponse = await fetch(`${url}login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
