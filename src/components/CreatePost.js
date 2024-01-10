@@ -56,7 +56,7 @@ export default function CreatePost() {
         } else {
           // Post creation failed, handle accordingly
           console.error('Failed to create post:', data.error);
-          alert('Failed to create post. Please try again.');
+         navigate(`/community/${com_id}`);
         }
       } else {
         console.error('Failed to create post');
