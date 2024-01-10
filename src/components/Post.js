@@ -93,8 +93,9 @@ export default function Post({ post }) {
   return (
     <>
       {postDetails.map((item) => (
-        <div key={item.description} className='cont-parent'onClick={handlePostClick}>
+        <div key={item.description} className='cont-parent'>
 
+          <div onClick={handlePostClick}>
             <div  className='cont-det' >
               <img className='com-dp' src={item.community_dp} alt='Community DP' />
               <span className='community' style={{ textDecoration: 'none' }}>
@@ -106,7 +107,7 @@ export default function Post({ post }) {
               <img className='post-image' src={item.image} alt="Post Image" />
             )}
             <p className='post-description'>{item.description}</p>
-
+        </div>
           <div className='vote-cont'>
             <img
               className='up-off'
