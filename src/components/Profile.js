@@ -3,6 +3,7 @@ import { Cookies } from 'react-cookie';
 import NavBar from './Navbar';
 import { useNavigate } from 'react-router-dom';
 import url from './config';
+import './stylesheet/profile.css';
 
 export default function Profile() {
   const cookies = new Cookies();
