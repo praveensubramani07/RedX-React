@@ -7,6 +7,7 @@ import '../stylesheet/post.css';
 import { Cookies } from 'react-cookie';
 import onUpvoteOffImage from '../images/upvote-on.png';
 import onDownVoteOfImage from '../images/downvote-on.png';
+import comment from '../images/comment.png';
 import { useNavigate } from 'react-router-dom';
 import  url from './config';
 
@@ -123,6 +124,7 @@ export default function Post({ post }) {
               alt='Downvote'
             />
             <p>{item.downvote}</p>
+              <img className="down-off" src={comment} alt="comment"/>
           </div>
         </div>
       ))}
