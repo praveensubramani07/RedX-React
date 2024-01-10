@@ -49,6 +49,8 @@ export default function CreateCommunity() {
         navigate(`/`);
       } else {
         console.error('Failed to create community');
+        navigate(`/`);
+        
       }
     } catch (error) {
       console.error('Error sending request:', error);
