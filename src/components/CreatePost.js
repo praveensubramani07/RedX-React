@@ -60,7 +60,8 @@ export default function CreatePost() {
         }
       } else {
         console.error('Failed to create post');
-        alert('Failed to create post. Please try again.');
+        navigate(`/community/${com_id}`);
+       // alert('Failed to create post. Please try again.');
       }
     } catch (error) {
       console.error('Error sending request:', error);
