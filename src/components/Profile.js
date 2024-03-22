@@ -59,7 +59,7 @@ export default function Profile() {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p class="user-det" >Loading...</p>
       )}
     </>
   );
