@@ -11,7 +11,14 @@ export default function Profile() {
   const userEmail = cookies.get('userEmail');
   const [userData, setUserData] = useState(null);
   const [newUsername, setNewUsername] = useState('');
+const handleLogout = () => {
+      const cookies = new Cookies();
+      // Remove the user email cookie or any other relevant cookies
+      cookies.remove('userEmail');
+      setMenuAct(false);
+      navigate('/');
 
+    };
   useEffect(() => {
     // Fetch user data based on email when component mounts
     fetch(`${url}users?email=${userEmail}`)
@@ -57,6 +64,8 @@ export default function Profile() {
             />
             <button onClick={handleUpdateUsername}>Save</button>
           </div>
+                
+  
         </div>
       ) : (
         <p class="user-det" >Loading...</p>
