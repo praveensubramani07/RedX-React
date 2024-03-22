@@ -112,8 +112,7 @@ Link{
     background-color: white;
     z-index: 999;
     top:60;
-    position: fixed;
-    overflow-y: auto;
+    position: absolute;
 }
 .menu-item{
     width: 80%;
