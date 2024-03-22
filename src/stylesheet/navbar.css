@@ -108,11 +108,12 @@ Link{
 }
 .menu{
     width:300px;
-    min-height: 100vh;
+    max-height: 100vh;
     background-color: white;
     z-index: 999;
     top:60;
-    position: absolute;
+    position: fixed;
+    overflow-y:auto;
 }
 .menu-item{
     width: 80%;
