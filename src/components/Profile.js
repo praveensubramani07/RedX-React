@@ -15,7 +15,7 @@ const handleLogout = () => {
       const cookies = new Cookies();
       // Remove the user email cookie or any other relevant cookies
       cookies.remove('userEmail');
-      setMenuAct(false);
+      
       navigate('/');
 
     };
