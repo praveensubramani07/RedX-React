@@ -107,7 +107,6 @@ Link{
     margin-right: 10px;
 }
 .menu{
-    position: fixed;
     width:300px;
     min-height: 100vh;
     background-color: white;
