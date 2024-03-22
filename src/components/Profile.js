@@ -65,7 +65,9 @@ const handleLogout = () => {
             <button onClick={handleUpdateUsername}>Save</button>
           </div>
                 
-  
+  <ul>
+            <li><button className='logout' onClick={handleLogout}>Logout</button></li>
+          </ul>
         </div>
       ) : (
         <p class="user-det" >Loading...</p>
