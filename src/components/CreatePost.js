@@ -65,7 +65,8 @@ export default function CreatePost() {
       }
     } catch (error) {
       console.error('Error sending request:', error);
-      alert('Error creating post. Please try again.');
+      navigate(`/community/${com_id}`);
+    //  alert('Error creating post. Please try again.');
     } finally {
       setLoading(false);
     }
