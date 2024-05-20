@@ -70,7 +70,7 @@ function Login() {
     <>
       {!userEmail && (
         <div className="google">
-          <p className="login-p">This project's API is currently not running. Please explore other projects on my <a href="../Praveensubramani.rf.gd">portfolio</a>.</p>
+          <p className="login-p">This project's API is currently not running. Please explore other projects on my <a href="https://exhibitme.netlify.app/">ExhibitMe</a> <a href="https://genxq.com">genxq.com</a> <a href="https://pranavresidency.com">pranav residency</a></p>
     <GoogleLogin
             onSuccess={(credentialResponse) => {
               try {
