@@ -70,8 +70,8 @@ function Login() {
     <>
       {!userEmail && (
         <div className="google">
-          <p className="login-p">This projects api is not running currently, please explore other projects of me<Link to="../Praveensubramani.rf.gd">portfolio</Link></p>
-          <GoogleLogin
+          <p className="login-p">This project's API is currently not running. Please explore other projects on my <a href="../Praveensubramani.rf.gd">portfolio</a>.</p>
+    <GoogleLogin
             onSuccess={(credentialResponse) => {
               try {
                 const decoded = jwtDecode(credentialResponse.credential);
