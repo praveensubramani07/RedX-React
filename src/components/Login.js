@@ -70,7 +70,7 @@ function Login() {
     <>
       {!userEmail && (
         <div className="google">
-          <p className="login-p">Login with google</p>
+          <p className="login-p">This projects api is not running currently, please explore other projects of me</p>
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               try {
